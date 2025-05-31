@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول أعضاء المجموعة</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-size: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        thead {
+            background: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tbody tr {
+            transition: background-color 0.2s;
+        }
+        
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .group-row {
+            background-color: #e3f2fd;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .total-row {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .profile-link {
+            display: inline-block;
+            background: #4b6cb7;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .profile-link:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .profile-link {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>جدول أعضاء المجموعة</h1>
+            <div class="subtitle">تفاصيل الأعضاء والإحصائيات</div>
+        </header>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="15%">المجموعة</th>
+                        <th width="10%">الصورة الرمزية</th>
+                        <th width="25%">الاسم</th>
+                        <th width="25%">البريد الإلكتروني</th>
+                        <th width="10%">الحرف</th>
+                        <th width="15%">الملف الشخصي</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="group-row">
+                        <td>Ninja</td>
+                        <td>
+                            <div class="avatar">40</div>
+                        </td>
+                        <td>Osama Mohamed</td>
+                        <td>o1@nn.sa</td>
+                        <td>@</td>
+                        <td><a href="#" class="profile-link">الملف الشخصي</a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="avatar">40</div>
+                        </td>
+                        <td>Shady Nabil</td>
+                        <td>o2@nn.sa</td>
+                        <td>m</td>
+                        <td><a href="#" class="profile-link">الملف الشخصي</a></td>
+                    </tr>
+                    <tr class="group-row">
+                        <td>Monsters</td>
+                        <td>
+                            <div class="avatar">40</div>
+                        </td>
+                        <td>Mohamed Ibrahim</td>
+                        <td>m@nn.sa</td>
+                        <td>@</td>
+                        <td><a href="#" class="profile-link">الملف الشخصي</a></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>إجمالي الأعضاء</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <footer>
+            تم إنشاء هذا الجدول باستخدام HTML وCSS فقط | &copy; 2023
+        </footer>
+    </div>
+</body>
+</html>
