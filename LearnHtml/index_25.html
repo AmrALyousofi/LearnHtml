@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مكتبة الكتب - متجر الكتب الإلكترونية</title>
+  <meta name="description" content="متجر الكتب الإلكترونية الأول في العالم العربي - نوفر أحدث الكتب والأكثر مبيعاً">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* تخطيط الصفحة */
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+      grid-template-columns: 3fr 1fr;
+      grid-gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "aside"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* التصميم العام */
+    header {
+      grid-area: header;
+      background: linear-gradient(135deg, #2c3e50, #4a6491);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav {
+      grid-area: nav;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    main {
+      grid-area: main;
+    }
+    
+    aside {
+      grid-area: aside;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    footer {
+      grid-area: footer;
+      background: linear-gradient(135deg, #2c3e50, #4a6491);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    /* تصميم العناصر */
+    .logo {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #ffd700;
+    }
+    
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .main-nav a {
+      color: rgb(4, 49, 230);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    
+    .main-nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .secondary-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      list-style: none;
+    }
+    
+    .secondary-nav a {
+      background-color: #4a6491;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    
+    .secondary-nav a:hover {
+      background-color: #2c3e50;
+      transform: translateY(-2px);
+    }
+    
+    .featured-book {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    
+    .book-content {
+      padding: 25px;
+    }
+    
+    .book-content h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+    
+    .book-content p {
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+    .book-image {
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+    }
+    
+    .book-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .book-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .tajaroup-link {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+    }
+    
+    .tajaroup-link:hover {
+      background: #ff5252;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+    }
+    
+    .sidebar-section {
+      margin-bottom: 25px;
+    }
+    
+    .sidebar-section h3 {
+      color: #2c3e50;
+      border-bottom: 2px solid #4a6491;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    .sidebar-list {
+      list-style: none;
+    }
+    
+    .sidebar-list li {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .sidebar-list a {
+      color: #4a6491;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: block;
+    }
+    
+    .sidebar-list a:hover {
+      color: #2c3e50;
+      padding-left: 5px;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .copyright {
+      margin-top: 25px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #4a6491, transparent);
+      margin: 25px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">مكتبة الكتب</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="https://amralyousofi.github.io/MyCV/"target="_blank">من نحن</a></li>
+          <li><a href="https://github.com/AmrALyousofi/"target="_blank">أعمالنا</a></li>
+          <li><a href="https://wa.me/qr/RTRZX3L6MC2AN1"target="_blank" class="tajaroup-link">إتصل بنا</a></li>
+        </ul>
+      </nav>
+    </header>
+               
+    <nav class="secondary-nav">
+      <ul class="secondary-nav">
+        <li><a href="#">روايات</a></li>
+        <li><a href="#">علوم</a></li>
+        <li><a href="#">تاريخ</a></li>
+        <li><a href="#">أدب</a></li>
+        <li><a href="#">تكنولوجيا</a></li>
+        <li><a href="#">تنمية بشرية</a></li>
+        <li><a href="#">أطفال</a></li>
+        <li><a href="#">أكثر المبيعات</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <article class="featured-book">
+        <figure class="book-image">
+          <img decoding="async" src="https://png.pngtree.com/thumb_back/fw800/background/20230531/pngtree-library-book-shelves-help-desk-illustration-education-background-image_2976426.jpg" alt="كتاب رائع في المكتبة">
+        </figure>
+        <div class="book-content">
+          <h2>رحلة إلى عالم الكتب</h2>
+          <p>كتاب مميز يأخذك في رحلة عبر عوالم الأدب والثقافة، حيث يقدم المؤلف رؤية جديدة للقراءة وأثرها في تشكيل العقل والوجدان. يحتوي الكتاب على تحليلات عميقة لأهم الأعمال الأدبية العالمية.</p>
+          <p>يعد هذا الكتاب من أفضل الكتب مبيعاً لهذا العام وحصل على تقييم 4.8 من 5 من قبل القراء.</p>
+          <a href="#" target="_blank" class="tajaroup-link">تصفح تجارب القراء</a>
+        </div>
+      </article>
+      
+      <section>
+        <h2>أحدث الإصدارات</h2>
+        <hr>
+        <div class="books-grid">
+          <p>سيتم عرض أحدث الكتب هنا مع صور وتفاصيل كل كتاب. يمكن استخدام عناصر article لكل كتاب.</p>
+        </div>
+      </section>
+    </main>
+    
+    <aside>
+      <div class="sidebar-section">
+        <h3>الأكثر مبيعاً</h3>
+        <ul class="sidebar-list">
+          <li><a href="https://ar.wikipedia.org/wiki/%D9%82%D9%88%D8%A9_%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D8%A9_(%D9%83%D8%AA%D8%A7%D8%A8)"target="_blank"title="Go To this Book">قوة العادة - تشارلز دوهيغ</a></li>
+          <li><a href="https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D8%A7%D8%AA_%D8%A7%D9%84%D8%B0%D8%B1%D9%8A%D8%A9"target="_blank"title="Go To this Book"target="_blank"title="Go To this Book">العادات الذرية - جيمس كلير</a></li>
+          <li><a href="https://ar.wikipedia.org/wiki/%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%B1%D8%A8">فن الحرب - سون تزو</a></li>
+          <li><a href="https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B1%D8%AC%D9%84_%D8%A7%D9%84%D8%B0%D9%8A_%D9%8A%D8%B9%D8%B1%D9%81_%D9%83%D9%84_%D8%B4%D9%8A%D8%A1"target="_blank"title="Go To this Book">الرجل الذي حسب كل شيء</a></li>
+          <li><a href="https://ar.wikipedia.org/wiki/48_%D9%82%D8%A7%D9%86%D9%88%D9%86%D8%A7_%D9%84%D9%84%D8%B3%D9%84%D8%B7%D8%A9"target="_blank"title="Go To this Book">48 قانوناً للقوة</a></li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3>عروض خاصة</h3>
+        <ul class="sidebar-list">
+          <li><a href="#">خصم 30% على الكتب العلمية</a></li>
+          <li><a href="#">عرض 3 كتب بسعر كتابين</a></li>
+          <li><a href="#">شحن مجاني للطلبات فوق 200 ريال</a></li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3>فئات الكتب</h3>
+        <ul class="sidebar-list">
+          <li><a href="#">روايات عالمية</a></li>
+          <li><a href="#">علوم وتكنولوجيا</a></li>
+          <li><a href="#">تاريخ وحضارات</a></li>
+          <li><a href="#">أدب عربي</a></li>
+          <li><a href="#">تنمية ذاتية</a></li>
+          <li><a href="#">كتب الأطفال</a></li>
+        </ul>
+      </div>
+    </aside>
+    
+    <footer>
+      <div class="footer-content">
+        <p>مكتبة الكتب - وجهتك الأولى لاكتشاف عوالم القراءة والمعرفة</p>
+        <div class="footer-links">
+          <a href="#">عن الشركة</a>
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">شروط الاستخدام</a>
+          <a href="#">وظائف</a>
+          <a href="#">المساعدة</a>
+        </div>
+        <p class="copyright">© 2023 مكتبة الكتب. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

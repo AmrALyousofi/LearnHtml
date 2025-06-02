@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع عمرو اليوسفي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* الترويسة */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .welcome-message {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* روابط الصور */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .image-link {
+            text-decoration: none;
+            display: block;
+            transition: all 0.4s ease;
+            perspective: 1000px;
+        }
+        
+        .image-link:hover {
+            transform: translateY(-10px);
+        }
+        
+        .image-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s;
+            transform-style: preserve-3d;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .image-link:hover .image-card {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-container {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-link:hover .image-container img {
+            transform: scale(1.1);
+        }
+        
+        .image-title {
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* التذييل */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 40px 30px;
+            margin-top: 50px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .contact-method {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+        }
+        
+        .contact-method i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #4facfe;
+        }
+        
+        .contact-method h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        .contact-method p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        /* التأثيرات على الجوال */
+        @media (max-width: 768px) {
+            .welcome-message {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- الترويسة -->
+        <header>
+            <h1 class="welcome-message">مرحباً بكم في موقع عمرو اليوسفي</h1>
+            <p class="subtitle">
+                موقعنا يوفر لكم أفضل الخدمات والمصادر والمكتبات الرقمية. تصفحوا أقسامنا المختلفة واستفيدوا من محتوانا المتنوع الذي نقدمه لكم بأعلى جودة.
+            </p>
+        </header>
+        
+        <!-- روابط الصور -->
+        <div class="links-grid">
+            <a href="#" class="image-link" target="_blank" title="Go To مكتبة اليوسفي">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&w=600&q=80" alt="مكتبة اليوسفي">
+                    </div>
+                    <div class="image-title">مكتبة اليوسفي</div>
+                </div>
+            </a>
+            
+            <a href="#" class="image-link" target="_blank" title="Go To أعمالنا">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80" alt="أعمالنا">
+                    </div>
+                    <div class="image-title">أعمالنا</div>
+                </div>
+            </a>
+            
+            <a href="#" class="image-link" target="_blank" title="Go To خدماتنا">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="خدماتنا">
+                    </div>
+                    <div class="image-title">خدماتنا</div>
+                </div>
+            </a>
+            
+            <a href="#" class="image-link" target="_blank" title="Go To عملائنا">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="عملائنا">
+                    </div>
+                    <div class="image-title">عملائنا</div>
+                </div>
+            </a>
+            
+            <a href="#" class="image-link" target="_blank" title="Go To مصادرنا">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="مصادرنا">
+                    </div>
+                    <div class="image-title">مصادرنا</div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- تذييل الصفحة -->
+        <footer>
+            <h2 class="contact-title">تواصل معنا</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <i>📧</i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>info@amr-alyousfi.com<br>support@amr-alyousfi.com</p>
+                </div>
+                
+                <div class="contact-method">
+                    <i>📱</i>
+                    <h3>الهاتف</h3>
+                    <p>+966 50 123 4567<br>+966 11 234 5678</p>
+                </div>
+                
+                <div class="contact-method">
+                    <i>🏢</i>
+                    <h3>المكتب الرئيسي</h3>
+                    <p>شارع الملك فهد، الرياض<br>المملكة العربية السعودية</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2023 موقع عمرو اليوسفي. جميع الحقوق محفوظة.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
