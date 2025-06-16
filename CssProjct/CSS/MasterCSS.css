@@ -1,0 +1,97 @@
+
+  /* #region الدرس السادس  */ 
+.Cla-6 {
+  background-color: rgb(250, 247, 247); /* Color Name */
+  background-color: rgb(0 0 0 / 50%); /* Red, Green, Blue, Alpha Channel */
+  background-color: #dddddd; /* Color Hex Code */
+  background-image: url("../../food-website/images/blog-img-5.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:0svi;
+  background-size:contain;
+}
+/* #endregion الدرس السادس  */
+
+/* #region الدرس 7 -10  */ 
+/* .Cla-7 {
+  background-color: #DDD; */
+
+  /* Top Right Bottom Left */
+  /* 10px 10px 10px 10px */
+/* 
+padding: 1px;
+  width: 70%;
+  margin: 40px 50px; */
+/* border-width: 2px;
+border-color: blue red green rgba(255, 210, 10, 0.979);
+  border-style:dashed solid solid solid; */
+  /* border: 7px solid rgb(255, 0, 0);
+  border-radius: 1px;
+outline: auto;
+outline:7px solid blue;
+} */
+/* #endregion الدرس 7 -10  */
+
+/* #region الدرس 11-15  */
+.Div-Block p{
+background-color: #d8cece;
+padding: 10px;
+margin: 10px;
+width: 200px;;
+/* display:inline  ; */
+  }
+  span{
+background-color: #d8cece;
+ padding: 5px;
+ margin: 10px;
+ /* display: block; */
+ width:fit-content;
+
+  }
+  .Cls111{
+background-color: #d8cece;
+ padding: 5px;
+ margin: 10px;
+ /* display: block; */
+ width: 200px;
+visibility:hidden;
+  }
+    .One{
+background-color: #d8cece;
+border-bottom: 2px solid red;
+}
+    .Tow{
+background-color: #d8cece;
+border-bottom: 2px solid green;
+  }
+    .Tree{
+background-color: #d8cece;
+border-bottom: 2px solid blue;
+  }
+    .Four{
+background-color: #d8cece;
+border-bottom: 2px solid black;
+  }
+  .One,
+  .Tow,
+  .Tree,
+  .Four
+  {
+padding: 5px;
+ margin: 10px;
+  /* width: fit-content; */
+  /* display: inline-block; */
+  }
+ /*درس 14 */
+ .N110w .Nesting p {
+    color: red;
+        background: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    width: 350px;;
+   
+
+  }
+/* #endregion الدرس 11 -15  */
+
+
