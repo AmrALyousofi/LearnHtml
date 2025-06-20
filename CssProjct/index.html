@@ -60,29 +60,6 @@
    <p>This Is Amr ALyousofi Pag</p>
    
  <!-- #endregion الدرس 11 -15  -->
-   <!-- قمت بعمل برنامج في الفجوال سي شارب 
-في البرنامج لدي 2 CombBox 
-الأول CombBuilding للعمائر 
-الثاني CombapartmentID للشقق 
-حيث CombapartmentID أقوم بتعبيته من CombBuilding  
-قمت بعمل ذلك عن طريق حدث CombBuilding_SelectedIndexChanged 
-والاجراء يتنفذ دون أي مشكلة 
-هذا هو الاجراء
- private void CombBuilding_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //try
-            {
-                if (rbCheck.Checked)
-                {
-                    this.CombapartmentID.DataSource = null;
-                    GenClass.FillMyComboBoxWith2Condition2("Apartments", "EmaraID", Convert.ToString(this.CombBuilding.SelectedValue), this.CombapartmentID, "apartmentName", "apartmentID");
-                    CombapartmentID.SelectedIndex = 0;
-                    CombapartmentID.Focus();
-                }
-               
-            }
-            catch { return; }
-        }
-ما أريد مساعتك فيه عندما عندما أختار عمارة من CombBuilding ويتم تعبية CombapartmentID بالشقق التابعة للعمارة التي تم إختيارها أن تكون القيمة الأول دائما جميع الشقق -->
+  
 </body>
 </html>

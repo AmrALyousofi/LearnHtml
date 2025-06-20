@@ -1,0 +1,115 @@
+
+/* #region Costs_1 */
+/* #region التكليف_رقم_1  */
+.assign-1-shape-1,
+.assign-1-shape-2,
+.assign-1-shape-3{ 
+    color: white;
+    width: 500px;
+    padding: 20px;
+    margin: 20px;
+}
+.assign-1-shape-1
+{
+    background-color: blueviolet;
+}
+.assign-1-shape-2
+{
+    background-color: rgb(210, 161, 255);
+}
+.assign-1-shape-3
+{
+    background-color: rgb(228, 213, 241);
+}
+/* #endregion التكليف_رقم_1 */
+/* #region التكليف_رقم_2 */
+/* التكليف رقم 2 - النسخة المحدثة */
+.assign-2-shape-1,
+.assign-2-shape-2,
+.assign-2-shape-3
+{
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  background-image: url("../../LearnHtml/image/food-img-1.png");
+  background-repeat: no-repeat;
+  background-color: rgb(226, 216, 216);
+
+}
+
+.assign-2-shape-1 {
+  background-size: 80% 80%; /* 80% من الطول والعرض */
+}
+
+.assign-2-shape-2 {
+  background-size: 100% 80%; /* 100% عرض, 80% ارتفاع */
+  background-position: center; /* توسيط الصورة */
+}
+
+.assign-2-shape-3 {
+  background-size: 80% 100%; /* 80% عرض, 100% ارتفاع */
+  background-position: center; /* توسيط الصورة */
+}
+
+.element-element-1,
+.element-element-2,
+.element-element-3 {
+
+ background-color: rgb(197, 193, 193);
+ padding: 10px;
+ margin: 6px;
+ width: 400px;
+}
+.element-element-1
+{
+    border-left: 6px solid rgb(248, 0, 95);
+}
+.element-element-2
+{
+    border-left: 6px solid rgb(152, 0, 240);
+    visibility: hidden;
+}
+.element-element-3
+{
+    border-left: 6px solid rgb(6, 153, 133);
+}
+
+  /* #endregion التكليف_رقم_2 */
+  .child .title
+  {
+    color: red;
+  }
+ div .title
+  {
+    color: blue;
+  }
+ .parent p
+  {
+    color: green;
+  }
+.title
+  {
+    color: rgb(0, 128, 28);
+  }
+
+  .C1001-1,
+  .C1001-2,
+  .C1001-3
+  {
+background-color: brown;
+color: white;
+padding: 10px;
+margin: 10px;
+width:fit-content;
+max-width: 400px;
+max-height: 30px;
+color: rgba(255, 251, 0, 0.911);
+    overflow: hidden; 
+  }
+  .C1001-3
+  {
+    
+  }
+  
+ /* #endregion Costs_1 */
+

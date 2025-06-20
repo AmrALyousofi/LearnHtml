@@ -89,9 +89,54 @@ padding: 5px;
     padding: 0px;
     margin: 0px;
     width: 350px;;
-   
-
   }
 /* #endregion الدرس 11 -15  */
 
+.index_16_Clas1{
+  width: 150px;
+  height: 150px;
+  background-color: #eee;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 6px;
+  /* overflow: auto; */
+  overflow-y: auto;
+  overflow-x: auto;
+}
+.index_16_Clas2 p
+  {
+  background-color: #030631;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 0 1px red;
+  padding: 20px;
+  text-align: center;
+  width: 800px;
+  direction:rtl ;
+vertical-align: top;
+  }
+.index_16_Clas3{
+  background-color: #160000;
+  color: white;
+  padding: 70px;
+  width: 470px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  font-family: 'Arial';
+  font-size:20px;
+  border: 5px solid rgb(9, 33, 255);
+   /* font-variant: small-caps; */
+  font-weight: bold;
+} 
+.index_16_Clas3 .index_16_Clas3_1
+{
+  margin-top: 60px;
+ border: inherit;
+ text-transform: uppercase;
+}
 
+.index_16_Clas3:hover {
+  overflow: visible;
+  color: rgb(251, 255, 0);
+
+}
